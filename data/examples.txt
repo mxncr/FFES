@@ -1,0 +1,41 @@
+This file regroups examples of application launch via the command line.
+All the examples assume the program has been built in the relative path folder: ../build
+
+To get the program options: ../build/ffes-distance -h
+
+For hexahedral meshes (Qk), we advise to use subdiv_X=2 (X = A or B depending
+of the position in the command line). This is the subdivision level used to
+approximate the geometry of the trilinear hexahedra (non-affine mappings).
+
+In all examples, one can use the option "gui=True" to visualize the field
+values and the absolute difference. Then the "Z slice" slider to change the
+position of the slice.
+
+In the data/ folder, finite element solutions are organised with the following
+convention: <PDE_type>_<model_name>_<FEM_basis>_<mesh_refinement>.json
+To get meaningful distance computations, one can compare different FEM_basis
+and mesh_refinement for the same PDE_type and model_name.
+
+Examples (not exhaustive list):
+
+* Basic norm computation (only one field):
+../build/ffes-distance poisson_sinbump_P1_coarse.json
+../build/ffes-distance poisson_sinbump_P1_coarse.json samples=300
+../build/ffes-distance poisson_sinbump_Q1_coarse.json samples=300 subdiv_A=2
+
+* Basic visualization of field (only one field):
+../build/ffes-distance poisson_sinbump_P1_coarse.json gui=True
+
+* Distance to analytical solution (only for sinus bump):
+../build/ffes-distance poisson_sinbump_P1_coarse.json samples=250 analytical_test=1
+../build/ffes-distance poisson_sinbump_Q1_coarse.json samples=350 subdiv_A=2 analytical_test=1
+../build/ffes-distance poisson_sinbump_P3_coarse.json samples=300 analytical_test=1
+
+* Visualization of distance to analytical solution (only for sinus bump):
+../build/ffes-distance poisson_sinbump_P1_coarse.json samples=250 analytical_test=1 gui=True
+../build/ffes-distance poisson_sinbump_Q1_coarse.json samples=250 analytical_test=1 gui=True
+
+* Distance between solutions of the sinus bump problem
+../build/ffes-distance poisson_sinbump_Q1_coarse.json poisson_sinbump_P1_coarse.json samples=250 subdiv_A=2
+../build/ffes-distance poisson_sinbump_P1_coarse.json poisson_sinbump_P3_coarse.json samples=250
+
