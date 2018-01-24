@@ -115,7 +115,7 @@ To add a new finite element (also called element group, i.e. a chunk of data wit
 
 - The executable "convert-from-mfem" converts a mfem::Mesh and a mfem::GridFunction to
   a FieldObject format readable by this program. To build it, it is required to:
-  - download and build mfem (see instructions at http://mfem.org)
+  - download and build the **serial** version of mfem (see instructions at http://mfem.org)
   - create a symbolic link named 'mfem' in third_party/ folder which links to the mfem directory
 
 # Third-party libraries
