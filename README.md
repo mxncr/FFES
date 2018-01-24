@@ -4,7 +4,7 @@ FFES: Fast Finite Element Sampling, a program to compute distances between
 
 This program/code is associated to the paper ``Reberol M., Lévy B., Computing
 the distance between two finite element solutions defined on different 3D
-meshes on a GPU, SIAM Journal on Scientific Computing, 2018``[(preprint
+meshes on a GPU, SIAM Journal on Scientific Computing (accepted, waiting for publication), 2018``[(preprint
 link)](https://hal.inria.fr/hal-01634176).
 
 # Motivations
@@ -67,7 +67,7 @@ Working examples (if launched in the build folder):
 For more command line examples, refer to the file `data/examples.txt`
 
 The file format used to specify the field inputs is described in the file
-INPUT_FORMAT.md.  For the moment, only a custom .json file format is supported.
+[INPUT_FORMAT](INPUT_FORMAT.md).  For the moment, only a custom .json file format is supported.
 It is possible to convert the output of the MFEM library (mesh in .mesh and
 solution in .gf format) to the .json format using the executable
 "convert-from-mfem" (requires to link with the serial MFEM library, see the
@@ -108,8 +108,8 @@ elements) is available in the file `src/bin/convert_from_mfem.cpp`.
 
 To add a new finite element (also called element group, i.e. a chunk of data with the same mapping and local interpolation functions), you need to:
 - specify the reference element decomposition into tetrahedra in the file `src/ffes/decompositions.hpp`
-- specify the mapping function in the input file (see INPUT_FORMAT.md)
-- specify the interpolation function in the input file (see INPUT_FORMAT.md)
+- specify the mapping function in the input file (see [INPUT_FORMAT](INPUT_FORMAT.md))
+- specify the interpolation function in the input file (see [INPUT_FORMAT](INPUT_FORMAT.md))
 
 # Optional
 
