@@ -60,10 +60,6 @@ the program arguments with "ffes-distance -h". Basic syntax is:
 
     ffes-distance <path/to/fieldA.json> <path/to/fieldB.json> samples=<nb samples> 
 
-Working examples (if launched in the build folder):
-
-    ffes-distance 
-
 For more command line examples, refer to the file `data/examples.txt`
 
 The file format used to specify the field inputs is described in the file
